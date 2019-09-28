@@ -1,0 +1,77 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "practicing"
+		},
+		"practicedf_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'practicedf'"
+		},
+		"datalakepracticedf_properties_typeProperties_dataLakeStoreUri": {
+			"type": "string",
+			"defaultValue": "https://practicedf.azuredatalakestore.net/webhdfs/v1"
+		},
+		"datalakepracticedf_properties_typeProperties_tenant": {
+			"type": "string",
+			"defaultValue": "93f33571-550f-43cf-b09f-cd331338d086"
+		},
+		"datalakepracticedf_properties_typeProperties_subscriptionId": {
+			"type": "string",
+			"defaultValue": "db282dfb-bf66-4f42-acad-38a869fd392a"
+		},
+		"datalakepracticedf_properties_typeProperties_resourceGroupName": {
+			"type": "string",
+			"defaultValue": "datafactory"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"practicedf_connectionString": {
+						"value": "[parameters('practicedf_connectionString')]"
+					},
+					"datalakepracticedf_properties_typeProperties_dataLakeStoreUri": {
+						"value": "[parameters('datalakepracticedf_properties_typeProperties_dataLakeStoreUri')]"
+					},
+					"datalakepracticedf_properties_typeProperties_tenant": {
+						"value": "[parameters('datalakepracticedf_properties_typeProperties_tenant')]"
+					},
+					"datalakepracticedf_properties_typeProperties_subscriptionId": {
+						"value": "[parameters('datalakepracticedf_properties_typeProperties_subscriptionId')]"
+					},
+					"datalakepracticedf_properties_typeProperties_resourceGroupName": {
+						"value": "[parameters('datalakepracticedf_properties_typeProperties_resourceGroupName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
