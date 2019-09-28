@@ -1,0 +1,14 @@
+{
+	"name": "datalakepracticedf",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureDataLakeStore",
+		"typeProperties": {
+			"dataLakeStoreUri": "https://practicedf.azuredatalakestore.net/webhdfs/v1",
+			"tenant": "93f33571-550f-43cf-b09f-cd331338d086",
+			"subscriptionId": "db282dfb-bf66-4f42-acad-38a869fd392a",
+			"resourceGroupName": "datafactory"
+		}
+	}
+}
