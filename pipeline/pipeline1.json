@@ -21,7 +21,15 @@
 						"sqlReaderQuery": "SELECT TOP (100) * FROM SalesLT.Address"
 					},
 					"sink": {
-						"type": "SqlServerSink"
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureDataLakeStoreWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
 					},
 					"enableStaging": false
 				},
@@ -33,7 +41,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "practicedf",
+						"referenceName": "DelimitedText1",
 						"type": "DatasetReference"
 					}
 				]
