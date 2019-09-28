@@ -20,9 +20,18 @@
 						"type": "SqlServerSource",
 						"sqlReaderQuery": "SELECT TOP (100) * FROM SalesLT.Address"
 					},
+					"sink": {
+						"type": "SqlServerSink"
+					},
 					"enableStaging": false
 				},
 				"inputs": [
+					{
+						"referenceName": "practicedf",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
 					{
 						"referenceName": "practicedf",
 						"type": "DatasetReference"
