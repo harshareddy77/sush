@@ -3,8 +3,8 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Get Metadata1",
-				"type": "GetMetadata",
+				"name": "Copy data1",
+				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "7.00:00:00",
@@ -15,8 +15,550 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"fieldList": []
-				}
+					"source": {
+						"type": "MySqlSource",
+						"query": "select * from user limit 2;"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Host",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Host",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "User",
+									"type": "String"
+								},
+								"sink": {
+									"name": "User",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Select_priv",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Select_priv",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Insert_priv",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Insert_priv",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Update_priv",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Update_priv",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Delete_priv",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Delete_priv",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Create_priv",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Create_priv",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Drop_priv",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Drop_priv",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Reload_priv",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Reload_priv",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Shutdown_priv",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Shutdown_priv",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Process_priv",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Process_priv",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "File_priv",
+									"type": "String"
+								},
+								"sink": {
+									"name": "File_priv",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Grant_priv",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Grant_priv",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "References_priv",
+									"type": "String"
+								},
+								"sink": {
+									"name": "References_priv",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Index_priv",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Index_priv",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Alter_priv",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Alter_priv",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Show_db_priv",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Show_db_priv",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Super_priv",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Super_priv",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Create_tmp_table_priv",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Create_tmp_table_priv",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Lock_tables_priv",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Lock_tables_priv",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Execute_priv",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Execute_priv",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Repl_slave_priv",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Repl_slave_priv",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Repl_client_priv",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Repl_client_priv",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Create_view_priv",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Create_view_priv",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Show_view_priv",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Show_view_priv",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Create_routine_priv",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Create_routine_priv",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Alter_routine_priv",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Alter_routine_priv",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Create_user_priv",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Create_user_priv",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Event_priv",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Event_priv",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Trigger_priv",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Trigger_priv",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Create_tablespace_priv",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Create_tablespace_priv",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ssl_type",
+									"type": "String"
+								},
+								"sink": {
+									"name": "ssl_type",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "ssl_cipher",
+									"type": "Byte[]"
+								},
+								"sink": {
+									"name": "ssl_cipher",
+									"type": "Byte[]"
+								}
+							},
+							{
+								"source": {
+									"name": "x509_issuer",
+									"type": "Byte[]"
+								},
+								"sink": {
+									"name": "x509_issuer",
+									"type": "Byte[]"
+								}
+							},
+							{
+								"source": {
+									"name": "x509_subject",
+									"type": "Byte[]"
+								},
+								"sink": {
+									"name": "x509_subject",
+									"type": "Byte[]"
+								}
+							},
+							{
+								"source": {
+									"name": "max_questions",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "max_questions",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "max_updates",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "max_updates",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "max_connections",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "max_connections",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "max_user_connections",
+									"type": "Int64"
+								},
+								"sink": {
+									"name": "max_user_connections",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"name": "plugin",
+									"type": "String"
+								},
+								"sink": {
+									"name": "plugin",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "authentication_string",
+									"type": "Byte[]"
+								},
+								"sink": {
+									"name": "authentication_string",
+									"type": "Byte[]"
+								}
+							},
+							{
+								"source": {
+									"name": "password_expired",
+									"type": "String"
+								},
+								"sink": {
+									"name": "password_expired",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "password_last_changed",
+									"type": "DateTime"
+								},
+								"sink": {
+									"name": "password_last_changed",
+									"type": "DateTime"
+								}
+							},
+							{
+								"source": {
+									"name": "password_lifetime",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "password_lifetime",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "account_locked",
+									"type": "String"
+								},
+								"sink": {
+									"name": "account_locked",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Create_role_priv",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Create_role_priv",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Drop_role_priv",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Drop_role_priv",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Password_reuse_history",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Password_reuse_history",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Password_reuse_time",
+									"type": "Int32"
+								},
+								"sink": {
+									"name": "Password_reuse_time",
+									"type": "Int32"
+								}
+							},
+							{
+								"source": {
+									"name": "Password_require_current",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Password_require_current",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "User_attributes",
+									"type": "Byte[]"
+								},
+								"sink": {
+									"name": "User_attributes",
+									"type": "Byte[]"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "MySqlTable1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"annotations": []
