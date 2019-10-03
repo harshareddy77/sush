@@ -5,10 +5,10 @@
 		"factoryName": {
 			"value": "practicing"
 		},
-		"MySql1_connectionString": {
+		"AzureBlobStorage1_connectionString": {
 			"value": ""
 		},
-		"AzureBlobStorage1_connectionString": {
+		"MySql1_connectionString": {
 			"value": ""
 		},
 		"containerUri": {

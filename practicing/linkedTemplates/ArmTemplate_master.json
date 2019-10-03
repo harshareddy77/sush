@@ -7,13 +7,13 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "practicing"
 		},
-		"MySql1_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'MySql1'"
-		},
 		"AzureBlobStorage1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
+		"MySql1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'MySql1'"
 		},
 		"containerUri": {
 			"type": "string",
