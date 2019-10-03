@@ -6,60 +6,10 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "practicing"
-		},
-		"practicedf_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'practicedf'"
-		},
-		"datalakepracticedf_properties_typeProperties_dataLakeStoreUri": {
-			"type": "string",
-			"defaultValue": "https://practicedf.azuredatalakestore.net/webhdfs/v1"
-		},
-		"datalakepracticedf_properties_typeProperties_tenant": {
-			"type": "string",
-			"defaultValue": "93f33571-550f-43cf-b09f-cd331338d086"
-		},
-		"datalakepracticedf_properties_typeProperties_subscriptionId": {
-			"type": "string",
-			"defaultValue": "db282dfb-bf66-4f42-acad-38a869fd392a"
-		},
-		"datalakepracticedf_properties_typeProperties_resourceGroupName": {
-			"type": "string",
-			"defaultValue": "datafactory"
 		}
 	},
 	"variables": {
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
-	"resources": [
-		{
-			"name": "[concat(parameters('factoryName'), '/datalakepracticedf')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureDataLakeStore",
-				"typeProperties": {
-					"dataLakeStoreUri": "[parameters('datalakepracticedf_properties_typeProperties_dataLakeStoreUri')]",
-					"tenant": "[parameters('datalakepracticedf_properties_typeProperties_tenant')]",
-					"subscriptionId": "[parameters('datalakepracticedf_properties_typeProperties_subscriptionId')]",
-					"resourceGroupName": "[parameters('datalakepracticedf_properties_typeProperties_resourceGroupName')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/practicedf')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "SqlServer",
-				"typeProperties": {
-					"connectionString": "[parameters('practicedf_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		}
-	]
+	"resources": []
 }
