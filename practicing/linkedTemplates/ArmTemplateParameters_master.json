@@ -5,20 +5,8 @@
 		"factoryName": {
 			"value": "practicing"
 		},
-		"practicedf_connectionString": {
+		"MySql1_connectionString": {
 			"value": ""
-		},
-		"datalakepracticedf_properties_typeProperties_dataLakeStoreUri": {
-			"value": "https://practicedf.azuredatalakestore.net/webhdfs/v1"
-		},
-		"datalakepracticedf_properties_typeProperties_tenant": {
-			"value": "93f33571-550f-43cf-b09f-cd331338d086"
-		},
-		"datalakepracticedf_properties_typeProperties_subscriptionId": {
-			"value": "db282dfb-bf66-4f42-acad-38a869fd392a"
-		},
-		"datalakepracticedf_properties_typeProperties_resourceGroupName": {
-			"value": "datafactory"
 		},
 		"containerUri": {
 			"value": ""

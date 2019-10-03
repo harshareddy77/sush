@@ -4,6 +4,9 @@
 	"parameters": {
 		"factoryName": {
 			"value": "practicing"
+		},
+		"MySql1_connectionString": {
+			"value": ""
 		}
 	}
 }

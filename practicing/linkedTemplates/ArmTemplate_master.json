@@ -7,25 +7,9 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "practicing"
 		},
-		"practicedf_connectionString": {
+		"MySql1_connectionString": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'practicedf'"
-		},
-		"datalakepracticedf_properties_typeProperties_dataLakeStoreUri": {
-			"type": "string",
-			"defaultValue": "https://practicedf.azuredatalakestore.net/webhdfs/v1"
-		},
-		"datalakepracticedf_properties_typeProperties_tenant": {
-			"type": "string",
-			"defaultValue": "93f33571-550f-43cf-b09f-cd331338d086"
-		},
-		"datalakepracticedf_properties_typeProperties_subscriptionId": {
-			"type": "string",
-			"defaultValue": "db282dfb-bf66-4f42-acad-38a869fd392a"
-		},
-		"datalakepracticedf_properties_typeProperties_resourceGroupName": {
-			"type": "string",
-			"defaultValue": "datafactory"
+			"metadata": "Secure string for 'connectionString' of 'MySql1'"
 		},
 		"containerUri": {
 			"type": "string",
@@ -54,20 +38,8 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"practicedf_connectionString": {
-						"value": "[parameters('practicedf_connectionString')]"
-					},
-					"datalakepracticedf_properties_typeProperties_dataLakeStoreUri": {
-						"value": "[parameters('datalakepracticedf_properties_typeProperties_dataLakeStoreUri')]"
-					},
-					"datalakepracticedf_properties_typeProperties_tenant": {
-						"value": "[parameters('datalakepracticedf_properties_typeProperties_tenant')]"
-					},
-					"datalakepracticedf_properties_typeProperties_subscriptionId": {
-						"value": "[parameters('datalakepracticedf_properties_typeProperties_subscriptionId')]"
-					},
-					"datalakepracticedf_properties_typeProperties_resourceGroupName": {
-						"value": "[parameters('datalakepracticedf_properties_typeProperties_resourceGroupName')]"
+					"MySql1_connectionString": {
+						"value": "[parameters('MySql1_connectionString')]"
 					}
 				}
 			},
