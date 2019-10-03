@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "MySqlSource",
-						"query": "select * from user limit 2;"
+						"query": "select * from user;"
 					},
 					"sink": {
 						"type": "DelimitedTextSink",
