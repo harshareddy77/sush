@@ -11,6 +11,18 @@
 		"MySql1_connectionString": {
 			"value": ""
 		},
+		"AzureDataLakeStore1_properties_typeProperties_dataLakeStoreUri": {
+			"value": "https://practicedf.azuredatalakestore.net/webhdfs/v1"
+		},
+		"AzureDataLakeStore1_properties_typeProperties_tenant": {
+			"value": "93f33571-550f-43cf-b09f-cd331338d086"
+		},
+		"AzureDataLakeStore1_properties_typeProperties_subscriptionId": {
+			"value": "db282dfb-bf66-4f42-acad-38a869fd392a"
+		},
+		"AzureDataLakeStore1_properties_typeProperties_resourceGroupName": {
+			"value": "datafactory"
+		},
 		"containerUri": {
 			"value": ""
 		},
