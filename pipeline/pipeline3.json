@@ -26,11 +26,6 @@
 				}
 			}
 		],
-		"parameters": {
-			"ProductID": {
-				"type": "int"
-			}
-		},
 		"annotations": []
 	}
 }
