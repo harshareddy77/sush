@@ -26,6 +26,11 @@
 				}
 			}
 		],
+		"variables": {
+			"ProductID": {
+				"type": "Array"
+			}
+		},
 		"annotations": []
 	}
 }
