@@ -16,7 +16,8 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "AzureSqlSource"
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "select PRODUCTID from SalesLT.Product"
 					},
 					"dataset": {
 						"referenceName": "AzureSqlTable1",
