@@ -13,12 +13,7 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [
-					{
-						"name": "ProductID",
-						"value": "680"
-					}
-				],
+				"userProperties": [],
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource"
@@ -32,11 +27,8 @@
 			}
 		],
 		"parameters": {
-			"tablename": {
-				"type": "String"
-			},
-			"name": {
-				"type": "String"
+			"ProductID": {
+				"type": "int"
 			}
 		},
 		"annotations": []
