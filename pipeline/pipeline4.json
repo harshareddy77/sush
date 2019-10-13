@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "select SELLSTARTDATE from SalesLT.Product"
+						"sqlReaderQuery": "select * from SalesLT.Product"
 					},
 					"dataset": {
 						"referenceName": "AzureSqlTable1",
@@ -60,7 +60,7 @@
 								"source": {
 									"type": "AzureSqlSource",
 									"sqlReaderQuery": {
-										"value": "@select * from SalesLT.Product WHERE @{pipeline().parameters.SELLSTARTDATE}",
+										"value": "@select * from SalesLT.Product WHERE @{pipeline().parameters.PRODUCTID}",
 										"type": "Expression"
 									}
 								},
@@ -95,7 +95,7 @@
 			}
 		],
 		"parameters": {
-			"SELLSTARTDATE": {
+			"PRODUCTID": {
 				"type": "string"
 			}
 		},
