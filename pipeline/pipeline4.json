@@ -60,7 +60,7 @@
 								"source": {
 									"type": "AzureSqlSource",
 									"sqlReaderQuery": {
-										"value": "@select * from SalesLT.Product WHERE @{pipeline().parameters.PRODUCTID}",
+										"value": "select * from SalesLT.Product WHERE @{pipeline().parameters.PRODUCTID}",
 										"type": "Expression"
 									}
 								},
