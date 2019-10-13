@@ -15,7 +15,8 @@
 				},
 				"userProperties": [
 					{
-						"name": "ProductID"
+						"name": "ProductID",
+						"value": "680"
 					}
 				],
 				"typeProperties": {
