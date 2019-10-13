@@ -18,16 +18,45 @@
 					"source": {
 						"type": "AzureSqlSource"
 					},
+					"sink": {
+						"type": "AzureSqlSink"
+					},
 					"enableStaging": false
 				},
 				"inputs": [
 					{
 						"referenceName": "AzureSqlTable1",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"tablename": {
+								"value": "@pipeline().parameters.tablename",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "AzureSqlTable1",
+						"type": "DatasetReference",
+						"parameters": {
+							"tablename": {
+								"value": "@pipeline().parameters.tablename",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
 		],
+		"parameters": {
+			"tablename": {
+				"type": "String"
+			},
+			"name": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
