@@ -16,22 +16,17 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "DelimitedTextSource",
-						"storeSettings": {
-							"type": "AzureDataLakeStoreReadSettings",
-							"recursive": true,
-							"enablePartitionDiscovery": false,
-							"modifiedDatetimeEnd": "2019-09-29T00:00:00.000Z"
-						},
-						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": {
+							"value": "SELECT * FROM [SalesLT].[Product] WHERE PRODUCTID >= @{pipeline().parameters.ProductID}",
+							"type": "Expression"
 						}
 					},
 					"sink": {
 						"type": "DelimitedTextSink",
 						"storeSettings": {
 							"type": "AzureDataLakeStoreWriteSettings",
-							"copyBehavior": "MergeFiles"
+							"copyBehavior": "FlattenHierarchy"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
@@ -43,18 +38,23 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DelimitedText3",
+						"referenceName": "AzureSqlTable1",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DelimitedText2",
+						"referenceName": "DelimitedText3",
 						"type": "DatasetReference"
 					}
 				]
 			}
 		],
+		"parameters": {
+			"ProductID": {
+				"type": "Int"
+			}
+		},
 		"annotations": []
 	}
 }

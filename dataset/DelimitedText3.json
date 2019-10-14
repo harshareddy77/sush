@@ -9,8 +9,7 @@
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureDataLakeStoreLocation",
-				"fileName": "[SalesLT].[Customer]"
+				"type": "AzureDataLakeStoreLocation"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
