@@ -20,6 +20,7 @@
 						"storeSettings": {
 							"type": "AzureDataLakeStoreReadSettings",
 							"recursive": true,
+							"wildcardFileName": "Sales",
 							"enablePartitionDiscovery": false,
 							"modifiedDatetimeEnd": "2019-09-29T00:00:00.000Z"
 						},
