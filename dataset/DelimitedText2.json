@@ -13,8 +13,7 @@
 				"fileName": {
 					"value": "@{item().Table_Name}",
 					"type": "Expression"
-				},
-				"folderPath": "harsha"
+				}
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
