@@ -95,11 +95,6 @@
 				}
 			}
 		],
-		"parameters": {
-			"Table_Name": {
-				"type": "string"
-			}
-		},
 		"annotations": []
 	}
 }
