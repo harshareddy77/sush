@@ -10,7 +10,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureDataLakeStoreLocation",
-				"fileName": "@{pipeline().parameters.Table_Name}"
+				"fileName": {
+					"value": "@{item().Table_Name}",
+					"type": "Expression"
+				}
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
