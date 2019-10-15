@@ -8,7 +8,13 @@
 		"AzureBlobStorage1_connectionString": {
 			"value": ""
 		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
 		"MySql1_connectionString": {
+			"value": ""
+		},
+		"dfcap_connectionString": {
 			"value": ""
 		},
 		"AzureDataLakeStore1_properties_typeProperties_dataLakeStoreUri": {
@@ -22,6 +28,9 @@
 		},
 		"AzureDataLakeStore1_properties_typeProperties_resourceGroupName": {
 			"value": "datafactory"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"value": "https://testingthedf.vault.azure.net/"
 		}
 	}
 }
