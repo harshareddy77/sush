@@ -705,7 +705,7 @@
 								"parameters": {}
 							},
 							"fieldList": [
-								"itemName"
+								"childItems"
 							],
 							"storeSettings": {
 								"type": "AzureBlobStorageReadSettings",
@@ -1081,6 +1081,101 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/DelimitedText3')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/pipeline7')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Stored Procedure1",
+						"type": "SqlServerStoredProcedure",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"storedProcedureName": "[[dbo].[uspPrintError]",
+							"storedProcedureParameters": {
+								"ErrorLogID": {
+									"value": "",
+									"type": "Int32"
+								}
+							}
+						},
+						"linkedServiceName": {
+							"referenceName": "AzureSqlDatabase1",
+							"type": "LinkedServiceReference"
+						}
+					}
+				],
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/pipeline8')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Execute Pipeline1",
+						"type": "ExecutePipeline",
+						"dependsOn": [],
+						"userProperties": [],
+						"typeProperties": {
+							"pipeline": {
+								"referenceName": "pipeline2",
+								"type": "PipelineReference"
+							},
+							"waitOnCompletion": true,
+							"parameters": {}
+						}
+					}
+				],
+				"annotations": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/pipelines/pipeline2')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/pipeline9')]",
+			"type": "Microsoft.DataFactory/factories/pipelines",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"activities": [
+					{
+						"name": "Web1",
+						"type": "WebActivity",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "7.00:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"url": "http://training-american-ws.cloudhub.io/api/flights",
+							"method": "GET",
+							"headers": {}
+						}
+					}
+				],
+				"annotations": []
+			},
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/AzureSqlTable1')]",
